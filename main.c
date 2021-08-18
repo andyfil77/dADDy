@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include <math.h>
+
 float quadro(double a, double b, double c)
 {
     /* ax^2 + bx + c = 0 */
