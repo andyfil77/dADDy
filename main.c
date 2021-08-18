@@ -4,22 +4,22 @@
 
 #include <math.h>
 
-float quadro(double a, double b, double c)
+float quadro(a, b, c, &x1, &x2, &solutionNo)
 {
     /* ax^2 + bx + c = 0 */
     double D, x1, x2;
     if (a == 0 && b != 0 && c != 0)
         {
             x1 = -c / b;
-            printf("The equation has one root: %.1f", x1);
+            solutionNo = 1;
         }
     else if ( a == 0 && b == 0 && c == 0)
         {
-            printf("The equation has infinitely many roots");
+            solutionNo = 3;
         }
     else if ( a == 0 && b == 0 && c != 0)
         {
-            printf ("The equation has no roots");
+            solutionNo = 0;
         }
     else
         {
@@ -28,16 +28,16 @@ float quadro(double a, double b, double c)
         {
             x1 = (-b + sqrt(D)) / (2 * a);
 			x2 = (-b - sqrt(D)) / (2 * a);
-			printf("The equation has two roots: %.1f  %.1f", x1, x2);
+			solutionNo = 2;
         }
         else if (D == 0)
         {
             x1 = -b / (2 * a);
-            printf("The equation has one root:%.1f", x1);
+            solutionNo = 2;
         }
         else
         {
-            printf ("The equation has no roots");
+            solutionNo = 0;
         }
         }
     return 0;
@@ -46,7 +46,24 @@ float quadro(double a, double b, double c)
 int main()
 {
     int a, b, c;
+    double x1, x2, solutionNo;
     scanf("%d %d %d", &a, &b, &c);
     quadro(a,b,c);
+    if (solutionNo == 0)
+    {
+        printf("the equation hasn't roots");
+    }
+    else if (solutionNo == 1)
+    {
+        printf("the equation has one root: %.1f", x1);
+    }
+    else if (solutionNo == 2)
+    {
+        printf("the equation has one root: %.1f %.1f", x1, x2);
+    }
+    else
+    {
+        printf("the equation has infinity many roots")
+    }
     return 0;
 }
