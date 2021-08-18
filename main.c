@@ -10,23 +10,33 @@ float quadro(double a, double b, double c)
             x1 = -c / b;
             printf("The equation has one root: %.1f", x1);
         }
-    else if ( a == 0 && b == 0 && c == 0) { printf("The equation has infinitely many roots"); }
-    else if ( a == 0 && b == 0 && c != 0) { printf ("The equation has no roots"); }
-    else {
+    else if ( a == 0 && b == 0 && c == 0)
+        {
+            printf("The equation has infinitely many roots");
+        }
+    else if ( a == 0 && b == 0 && c != 0)
+        {
+            printf ("The equation has no roots");
+        }
+    else
+        {
         D = b * b - 4 * a * c;
-        if (D > 0) {
+        if (D > 0)
+        {
             x1 = (-b + sqrt(D)) / (2 * a);
 			x2 = (-b - sqrt(D)) / (2 * a);
 			printf("The equation has two roots: %.1f  %.1f", x1, x2);
         }
-        else if (D == 0) {
+        else if (D == 0)
+        {
             x1 = -b / (2 * a);
             printf("The equation has one root:%.1f", x1);
         }
-        else {
+        else
+        {
             printf ("The equation has no roots");
         }
-    }
+        }
     return 0;
 }
 int main()
