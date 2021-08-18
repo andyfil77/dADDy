@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 #include <stdlib.h>
+
 #include <math.h>
 float quadro(double a, double b, double c)
 {
@@ -39,6 +41,7 @@ float quadro(double a, double b, double c)
         }
     return 0;
 }
+
 int main()
 {
     int a, b, c;
